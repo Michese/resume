@@ -53,7 +53,7 @@ export default class HeaderPage extends Vue {
   width: 100%;
   position: fixed;
   z-index: 1;
-  background-color: var(--orange-color);
+  background-color: rgba(249, 138, 35, 0.8);
 
   &__inner {
     display: flex;

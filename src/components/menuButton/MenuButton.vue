@@ -22,9 +22,9 @@ import { TLink } from '@/types';
 export default class MenuButton extends Vue {
   @Prop({
     required: true,
-    type: Array as TLink[],
+    type: Array,
   })
-  items!: TLink;
+  items!: TLink[];
   isOpenMenu = false;
 }
 </script>

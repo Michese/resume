@@ -6,7 +6,7 @@
 }
 
 html {
-  font: normal 14px/1em Montserrat;
+  font: 500 14px/1em 'Montserrat', sans-serif;
 }
 
 ul {
@@ -17,4 +17,15 @@ ul {
 button {
   border: none;
   cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.section-caption {
+  font-size: 26px;
+  line-height: 1.230769em;
+  font-weight: 700;
 }
