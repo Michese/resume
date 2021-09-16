@@ -106,9 +106,10 @@ export default class About extends Vue {
 
   &__white-line {
     height: 4px;
-    background-color: #fff;
     width: 80%;
     margin-bottom: 35px;
+    background-color: #fff;
+    border-radius: 1px 10px 10px 1px;
   }
 
   &__list {
@@ -120,7 +121,7 @@ export default class About extends Vue {
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
     &:not(:last-child) {
-      margin-bottom: 44px;
+      margin-bottom: 30px;
     }
   }
 
