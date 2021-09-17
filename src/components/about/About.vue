@@ -17,9 +17,9 @@
         <ul class="about__list">
           <li v-for="item in definitions" class="about__item" :key="item.term">
             <strong class="about__term">{{ item.term }}</strong>
-            <a v-if="item.link" class="about__definition about__definition_link" :href="item.link">{{
-              item.definition
-            }}</a>
+            <a v-if="item.link" class="about__definition about__definition_link" :href="item.link">
+              {{ item.definition }}
+            </a>
             <span v-else class="about__definition">{{ item.definition }}</span>
           </li>
         </ul>
@@ -48,12 +48,14 @@ export default class About extends Vue {
 
 <style lang="scss" scoped>
 .about {
-  background-color: var(--orange-color);
+  background: url('./assets/background.jpg') no-repeat #fff;
+  background-size: cover;
 
   &__inner {
     display: flex;
     flex-direction: column;
     align-items: center;
+    align-content: center;
     max-width: var(--container-width);
     margin: 0 auto;
     padding: 174px 15px 60px;
@@ -75,6 +77,7 @@ export default class About extends Vue {
     line-height: 1.2142857em;
     font-weight: 800;
     margin-bottom: 17px;
+    text-align: center;
   }
 
   &__profession {
@@ -82,6 +85,7 @@ export default class About extends Vue {
     line-height: 1.2142857em;
     font-weight: 700;
     margin-bottom: 28px;
+    text-align: center;
   }
 
   &__avatar {
@@ -106,7 +110,7 @@ export default class About extends Vue {
 
   &__white-line {
     height: 4px;
-    width: 80%;
+    width: 90%;
     margin-bottom: 35px;
     background-color: #fff;
     border-radius: 1px 10px 10px 1px;
@@ -138,7 +142,28 @@ export default class About extends Vue {
     line-height: 22px;
 
     &_link:hover {
-      color: red;
+      color: #fff;
+    }
+  }
+}
+
+@media screen and (min-width: 1110px) {
+  .about {
+    &__inner {
+      flex-direction: row;
+      justify-content: space-between;
+      padding-bottom: 214px;
+    }
+
+    &__card {
+      padding: 24px 42px 35px;
+      margin-bottom: 0;
+    }
+
+    &__content {
+      max-width: 540px;
+      padding-bottom: 24px;
+      margin-bottom: 0;
     }
   }
 }

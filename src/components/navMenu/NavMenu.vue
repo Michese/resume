@@ -1,7 +1,9 @@
 <template>
   <nav class="nav-menu">
     <button class="nav-menu__button" type="button" @click.stop="close">
-      <img src="./assets/close.svg" alt="close" class="nav-menu__image" />
+      <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" class="nav-menu__image">
+        <path d="M60 6L54 0L30 24L6 0L0 6L24 30L0 54L6 60L30 36L54 60L60 54L36 30L60 6Z" />
+      </svg>
     </button>
     <ul class="nav-menu__list">
       <li v-for="item in items" :key="item.text" class="nav-menu__item">
@@ -47,6 +49,18 @@ export default class NavMenu extends Vue {
     align-self: flex-end;
     margin-bottom: 60px;
     background-color: transparent;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  &__image {
+    fill: var(--orange-color);
+
+    &:hover {
+      fill: #fff;
+    }
   }
 
   &__list {
@@ -61,6 +75,16 @@ export default class NavMenu extends Vue {
     font-size: 26px;
     line-height: 1.230769em;
     color: var(--orange-color);
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+@media screen and (min-width: 1110px) {
+  .nav-menu {
+    display: none;
   }
 }
 </style>

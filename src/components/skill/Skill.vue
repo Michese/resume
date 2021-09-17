@@ -28,14 +28,14 @@ export default class Skill extends Vue {
   get skillLists(): { name: string; percent: number }[][] {
     return [
       [
-        { name: 'HTML', percent: 50 },
+        { name: 'HTML', percent: 65 },
         { name: 'CSS', percent: 50 },
-        { name: 'SCSS', percent: 50 },
+        { name: 'SCSS', percent: 70 },
       ],
       [
-        { name: 'JavaScript', percent: 50 },
+        { name: 'JavaScript', percent: 90 },
         { name: 'TypeScript', percent: 80 },
-        { name: 'Vue.js', percent: 50 },
+        { name: 'Vue.js', percent: 80 },
       ],
     ];
   }
@@ -104,6 +104,18 @@ export default class Skill extends Vue {
     bottom: 0;
     left: 0;
     background-color: var(--orange-color);
+  }
+}
+
+@media screen and (min-width: 1110px) {
+  .skill {
+    &__card {
+      flex-direction: row;
+    }
+
+    &__list:not(:last-child) {
+      margin-right: 30px;
+    }
   }
 }
 </style>

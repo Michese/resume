@@ -3,7 +3,7 @@
     <ul class="socials__list">
       <li v-for="social in socials" class="socials__item" :key="social.image">
         <a :href="social.link" class="socials__link" target="_blank">
-          <img :src="social.image" alt="social" class="socials__image" :class="{inHeader: 'socials__image_size_s'}" />
+          <img :src="social.image" alt="social" class="socials__image" :class="{ socials__image_size_s: inHeader }" />
         </a>
       </li>
     </ul>
@@ -60,6 +60,20 @@ export default class Socials extends Vue {
 
   &__item:not(:last-child) {
     margin-right: 30px;
+  }
+
+  &__image {
+    width: 65px;
+    height: 65px;
+    transition: transform 0.1s linear;
+
+    &_size_s {
+      width: 40px;
+      height: 40px;
+    }
+    &:hover {
+      transform: scale(1.3);
+    }
   }
 }
 </style>
