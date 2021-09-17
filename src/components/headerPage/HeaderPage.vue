@@ -5,7 +5,16 @@
         <img src="./assets/phone.svg" alt="phone" class="header-page__phone-image" />
       </a>
       <socials class="header-page__socials" />
-      <menu-button :items="itemsMenu" />
+      <div class="header-page__menu-button">
+        <menu-button class="header-page__menu-button" :items="itemsMenu" />
+      </div>
+      <nav class="header-page__navigation">
+        <ul class="header-page__list">
+          <li v-for="item in itemsMenu" class="header-page__item" :key="item.text">
+            <a :href="item.link" class="header-page__link">{{ item.text }}</a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </header>
 </template>
@@ -65,7 +74,27 @@ export default class HeaderPage extends Vue {
     margin: 0 auto;
   }
 
+  &__list {
+    display: flex;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 33px;
+  }
+
+  &__link {
+    font-size: 20px;
+    line-height: 24px;
+    &:hover {
+      color: #fff;
+    }
+  }
+
   &__socials {
+    display: none;
+  }
+
+  &__navigation {
     display: none;
   }
 }
@@ -73,6 +102,18 @@ export default class HeaderPage extends Vue {
 @media screen and (min-width: 1110px) {
   .header-page {
     &__socials {
+      display: block;
+    }
+
+    &__phone-link {
+      display: none;
+    }
+
+    &__menu-button {
+      display: none;
+    }
+
+    &__navigation {
       display: block;
     }
   }
