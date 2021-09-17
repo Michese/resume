@@ -47,7 +47,9 @@ export default class Skill extends Vue {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: var(--container-width);
   padding: 60px 75px 30px 75px;
+  margin: 0 auto;
 
   &__section-caption {
     margin-bottom: 26px;

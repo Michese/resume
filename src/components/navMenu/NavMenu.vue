@@ -41,6 +41,7 @@ export default class NavMenu extends Vue {
   z-index: 5;
   padding: 28px 15px 60px 64px;
   background-color: var(--black-color);
+  border-radius: 0 0 0 30px;
 
   &__button {
     align-self: flex-end;
@@ -49,7 +50,17 @@ export default class NavMenu extends Vue {
   }
 
   &__list {
-    margin-right: 55px ;
+    margin-right: 55px;
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 33px;
+  }
+
+  &__link {
+    font-size: 26px;
+    line-height: 1.230769em;
+    color: var(--orange-color);
   }
 }
 </style>

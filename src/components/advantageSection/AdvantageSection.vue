@@ -3,7 +3,12 @@
     <h2 class="advantage-section__section-caption section-caption">{{ advantageSection.caption }}</h2>
     <ul class="advantage-section__list">
       <li class="advantage-section__item">
-        <advantage-card class="advantage-section__advantage-card" />
+        <advantage-card
+          v-for="advantageCard in advantageSection.list"
+          class="advantage-section__advantage-card"
+          :advantageCard="advantageCard"
+          :key="advantageCard.caption"
+        />
       </li>
     </ul>
   </section>
@@ -30,7 +35,9 @@ export default class AdvantageSection extends Vue {
 
 <style lang="scss" scoped>
 .advantage-section {
+  max-width: var(--container-width);
   padding: 30px 15px;
+  margin: 0 auto;
 
   &__section-caption {
     display: block;
@@ -38,5 +45,8 @@ export default class AdvantageSection extends Vue {
     text-align: center;
   }
 
+  &__advantage-card:not(:last-child) {
+    margin-bottom: 27px;
+  }
 }
 </style>

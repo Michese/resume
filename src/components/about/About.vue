@@ -54,7 +54,7 @@ export default class About extends Vue {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 1140px;
+    max-width: var(--container-width);
     margin: 0 auto;
     padding: 174px 15px 60px;
   }

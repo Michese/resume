@@ -1,15 +1,17 @@
 <template>
-  <a href="#" class="advantage-card">
+  <a
+    class="advantage-card"
+    :href="advantageCard.link"
+    :download="advantageCard.isDownload"
+    :target="advantageCard.isDownload ? '_self' : '_blank'"
+  >
     <header class="advantage-card__header">
-      <h3 class="advantage-card__caption">1</h3>
-      <strong class="advantage-card__year">2222</strong>
+      <h3 class="advantage-card__caption">{{ advantageCard.caption }}</h3>
+      <strong class="advantage-card__year">{{ advantageCard.year }}</strong>
     </header>
     <main class="advantage-card__main">
-      <strong class="advantage-card__definition">2222</strong>
-      <p class="advantage-card__content">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur deleniti odio repellat tempora temporibus!
-        Ad animi beatae cumque deleniti illo illum in magnam nemo nesciunt, officiis quibusdam sequi unde voluptatibus.
-      </p>
+      <strong class="advantage-card__definition">{{ advantageCard.definition }}</strong>
+      <p class="advantage-card__content">{{ advantageCard.content }}</p>
     </main>
   </a>
 </template>
@@ -17,12 +19,17 @@
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
+import { TAdvantageCard } from '@/types';
 
 @Options({
   name: 'AdvantageCard',
 })
 export default class AdvantageCard extends Vue {
-
+  @Prop({
+    type: Object,
+    required: true,
+  })
+  advantageCard!: TAdvantageCard;
 }
 </script>
 
@@ -47,11 +54,13 @@ export default class AdvantageCard extends Vue {
     font-weight: 700;
     font-size: 23px;
     margin-bottom: 20px;
+    color: #fff;
   }
 
   &__year {
     font-size: 20px;
     line-height: 1.15em;
+    color: #fff;
   }
 
   &__main {

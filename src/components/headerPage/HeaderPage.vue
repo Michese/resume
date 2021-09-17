@@ -15,6 +15,7 @@ import { Options, Vue } from 'vue-class-component';
 import Socials from '@/components/socials/Socials.vue';
 import MenuButton from '@/components/menuButton/MenuButton.vue';
 import { TLink } from '@/types';
+import { menuLinksEnum } from '@/enums';
 
 @Options({
   name: 'HeaderPage',
@@ -25,23 +26,23 @@ export default class HeaderPage extends Vue {
     return [
       {
         text: 'О себе',
-        link: '#',
+        link: '#' + menuLinksEnum.about,
       },
       {
         text: 'Навыки',
-        link: '#',
+        link: '#' + menuLinksEnum.skills,
       },
       {
         text: 'Образование',
-        link: '#',
+        link: '#' + menuLinksEnum.education,
       },
       {
-        text: 'Опыт',
-        link: '#',
+        text: 'Опыт работы',
+        link: '#' + menuLinksEnum.experience,
       },
       {
         text: 'Достижения',
-        link: '#',
+        link: '#' + menuLinksEnum.achievements,
       },
     ];
   }
@@ -59,7 +60,9 @@ export default class HeaderPage extends Vue {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: var(--container-width);
     padding: 28px 15px;
+    margin: 0 auto;
   }
 
   &__socials {
