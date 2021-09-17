@@ -40,7 +40,6 @@ export default class AdvantageCard extends Vue {
   background: #fff;
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.25);
   border-radius: 30px;
-  transition: transform 0.2s ease-in-out;
 
   &__header {
     display: flex;
@@ -69,7 +68,7 @@ export default class AdvantageCard extends Vue {
   }
 
   &__main {
-    padding: 32px 60px;
+    padding: 15px;
   }
 
   &__definition {
@@ -87,8 +86,6 @@ export default class AdvantageCard extends Vue {
   }
 
   &:hover {
-    transform: scale(1.05);
-
     .advantage-card__header {
       background-color: #000;
     }
@@ -101,13 +98,26 @@ export default class AdvantageCard extends Vue {
   }
 }
 
+@media screen and (min-width: 500px) {
+  .advantage-card {
+    &__main {
+      padding: 32px 60px;
+    }
+  }
+}
+
 @media screen and (min-width: 1110px) {
   .advantage-card {
     flex-direction: row;
+    transition: transform 0.2s ease-in-out;
 
     &__header {
       min-width: 255px;
       border-radius: 30px 0 0 30px;
+    }
+
+    &:hover {
+      transform: scale(1.1);
     }
   }
 }

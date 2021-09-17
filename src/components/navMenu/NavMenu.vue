@@ -6,7 +6,7 @@
       </svg>
     </button>
     <ul class="nav-menu__list">
-      <li v-for="item in items" :key="item.text" class="nav-menu__item">
+      <li v-for="item in items" :key="item.text" class="nav-menu__item" @click.stop="close">
         <a :href="item.link" class="nav-menu__link">{{ item.text }}</a>
       </li>
     </ul>

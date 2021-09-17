@@ -8,7 +8,7 @@
   </button>
   <teleport to="body">
     <transition name="menu">
-      <nav-menu v-if="isOpenMenu" class="menu-button__nav-menu" :items="items" @close="isOpenMenu = false" />
+      <nav-menu v-show="isOpenMenu" class="menu-button__nav-menu" :items="items" @close="isOpenMenu = false" />
     </transition>
   </teleport>
 </template>
@@ -44,5 +44,16 @@ export default class MenuButton extends Vue {
       fill: #fff;
     }
   }
+}
+
+.menu-enter-active,
+.menu-leave-active {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.menu-enter-from,
+.menu-leave-to {
+  opacity: 0;
+  transform: translateY(-100%);
 }
 </style>

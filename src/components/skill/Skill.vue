@@ -48,7 +48,7 @@ export default class Skill extends Vue {
   flex-direction: column;
   align-items: center;
   max-width: var(--container-width);
-  padding: 60px 75px 30px 75px;
+  padding: 30px 15px 15px;
   margin: 0 auto;
 
   &__section-caption {
@@ -104,6 +104,12 @@ export default class Skill extends Vue {
     bottom: 0;
     left: 0;
     background-color: var(--orange-color);
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .skill {
+    padding: 60px 75px 30px 75px;
   }
 }
 

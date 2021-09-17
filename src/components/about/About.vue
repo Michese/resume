@@ -65,11 +65,8 @@ export default class About extends Vue {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 24px 60px 35.28px;
+    padding: 0 15px;
     margin-bottom: 36px;
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
   }
 
   &__name {
@@ -95,7 +92,6 @@ export default class About extends Vue {
   &__content {
     width: 100%;
     padding: 24px 15px 0;
-    margin-bottom: 139px;
   }
 
   &__caption {
@@ -122,8 +118,8 @@ export default class About extends Vue {
 
   &__item {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
     &:not(:last-child) {
       margin-bottom: 30px;
     }
@@ -133,7 +129,6 @@ export default class About extends Vue {
     font-weight: 700;
     font-size: 18px;
     line-height: 22px;
-    margin-right: 20px;
   }
 
   &__definition {
@@ -143,6 +138,21 @@ export default class About extends Vue {
 
     &_link:hover {
       color: #fff;
+    }
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .about {
+    &__card {
+      padding: 24px 60px 35.28px;
+      background: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.25);
+      border-radius: 5px;
+    }
+
+    &__item {
+      grid-template-columns: 1fr 1fr;
     }
   }
 }
