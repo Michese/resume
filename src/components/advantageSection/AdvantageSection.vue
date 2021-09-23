@@ -37,17 +37,23 @@ export default class AdvantageSection extends Vue {
 .advantage-section {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
   min-height: 100vh;
   max-width: var(--container-width);
-  padding: 30px 15px;
+  padding: 98px 15px 30px;
   margin: 0 auto;
 
   &__section-caption {
     display: block;
     margin-bottom: 26px;
     text-align: center;
+  }
+
+  &__list {
+    display: flex;
+    flex: 1 0 100%;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
   }
 
   &__advantage-card:not(:last-child) {

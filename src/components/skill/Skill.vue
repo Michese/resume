@@ -2,18 +2,20 @@
   <section class="skill">
     <h2 class="skill__section-caption section-caption">Навыки</h2>
 
-    <div class="skill__card">
-      <ul v-for="(skillItems, index) in skillLists" class="skill__list" :key="'skill' + index">
-        <li v-for="skill in skillItems" class="skill__item" :key="skill.name">
-          <header class="skill__header">
-            <h3 class="skill__name">{{ skill.name }}</h3>
-            <span class="skill__percent">{{ skill.percent }}%</span>
-          </header>
-          <main class="skill__main">
-            <div class="skill__progress" :style="{ width: `${skill.percent}%` }"></div>
-          </main>
-        </li>
-      </ul>
+    <div class="skill__inner">
+      <div class="skill__card">
+        <ul v-for="(skillItems, index) in skillLists" class="skill__list" :key="'skill' + index">
+          <li v-for="skill in skillItems" class="skill__item" :key="skill.name">
+            <header class="skill__header">
+              <h3 class="skill__name">{{ skill.name }}</h3>
+              <span class="skill__percent">{{ skill.percent }}%</span>
+            </header>
+            <main class="skill__main">
+              <div class="skill__progress" :style="{ width: `${skill.percent}%` }"></div>
+            </main>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 </template>
@@ -46,15 +48,22 @@ export default class Skill extends Vue {
 .skill {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
   min-height: 100vh;
   max-width: var(--container-width);
   padding: 30px 15px 15px;
   margin: 0 auto;
 
   &__section-caption {
+    text-align: center;
     margin-bottom: 26px;
+  }
+
+  &__inner {
+    display: flex;
+    flex: 1 0 100%;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
   }
 
   &__card {
@@ -111,7 +120,7 @@ export default class Skill extends Vue {
 
 @media screen and (min-width: 500px) {
   .skill {
-    padding: 60px 75px 30px 75px;
+    padding: 98px 75px 30px 75px;
   }
 }
 
