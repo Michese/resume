@@ -48,6 +48,9 @@ export default class About extends Vue {
 
 <style lang="scss" scoped>
 .about {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
   background: url('./assets/background.jpg') no-repeat #fff;
   background-size: cover;
 
@@ -56,6 +59,7 @@ export default class About extends Vue {
     flex-direction: column;
     align-items: center;
     align-content: center;
+    width: 100%;
     max-width: var(--container-width);
     margin: 0 auto;
     padding: 174px 15px 60px;
