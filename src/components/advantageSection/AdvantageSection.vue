@@ -35,6 +35,11 @@ export default class AdvantageSection extends Vue {
 
 <style lang="scss" scoped>
 .advantage-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 100vh;
   max-width: var(--container-width);
   padding: 30px 15px;
   margin: 0 auto;
